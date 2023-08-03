@@ -4,14 +4,14 @@ import { galleryItems } from './gallery-items.js';
 // console.log(galleryItems);
 const galleryEl = document.querySelector('.gallery');
 
-function createCalleryCardMurkup(gallery) {
+function createGalleryCardMurkup(gallery) {
     return gallery
         .map(({ preview, original, description }) => {
             return `
-            <div class="gallery_item">
-                <a class="gallery_link" href="${original}">
+            <div class="gallery__item">
+                <a class="gallery__link" href="${original}">
                     <img
-                        class="gallery_image"
+                        class="gallery__image"
                         src="${preview}"
                         data-source="${original}"
                         alt="${description}"
@@ -23,7 +23,7 @@ function createCalleryCardMurkup(gallery) {
         .join('');
 }
 
-const cardsMarcup = createCalleryCardMurkup(galleryItems);
+const cardsMarcup = createGalleryCardMurkup(galleryItems);
 galleryEl.innerHTML = cardsMarcup;
 
 galleryEl.addEventListener('click', handLeImgClick);
